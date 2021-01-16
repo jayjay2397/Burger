@@ -1,5 +1,5 @@
 //Linking the orm.js file
-var orm = require("../config/orm");
+var orm = require("../config/orm.js");
 
 //Adding the Burger Variables and the callback functions
 var burger = {
