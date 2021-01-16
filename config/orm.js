@@ -1,5 +1,5 @@
 // Importing MySQL Connection.
-var connection = require('../config/connection.js');
+var connection = require("../config/connection.js");
 
 //Selecting All ORM
 var orm = {
@@ -37,5 +37,5 @@ var orm = {
             });
         },
     }
-//Exports ORM
+
 module.exports = orm;
