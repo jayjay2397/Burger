@@ -24,8 +24,7 @@
       <h2 class="list-title">Available To Devour!:</h2>
       <ul class="list-content" id="not-d-list">
         {{#each burgers}}
-          {{#unless devoured}}
-            {{> burgers/burger-block devour=true}}
+          {{#unless this.devoured}}
           {{/unless}}
         {{/each}}
       </ul>
@@ -35,8 +34,7 @@
       <h2 class="list-title ">Devoured!:</h2>
       <ul class="list-content" id="d-list">
         {{#each burgers}}
-          {{#if devoured}}
-             {{> burgers/burger-block devour=false}}
+          {{#if this.devoured}}
           {{/if}}
         {{/each}}
       </ul>
