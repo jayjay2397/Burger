@@ -1,0 +1,60 @@
+<div class="jumbotron">
+  <div class="burgerImage"><center><img src="/assets/images/kk2.png"></center> 
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 addBurger">
+      <h3 class="miniHeading">Add burgers</h3>
+      <div class="moveMe">
+        <form class="create-update-form" action="/insertOne" method="POST">
+          <div class="form-group">
+            <textarea type="text" name="burger_name"></textarea><br>
+            <button class="btn btn-warning" type="submit"> Add Burger</button>
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 burgers">
+      <h3 class="miniHeading">Galley Grub </h3>
+      <br>
+      <ul>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <div class="showBurger">
+          <p>
+            {{this.burger_name}}</p>
+          <form action="/updateOne/{{this.id}}" method="POST">
+            <input type="hidden" name="devoured" value="1">
+            <button type="submit" class="btn" >Devour the Burger!</button>
+          </form>
+          <br>
+        </div>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-6 devoured">
+      <h3 class="miniHeading">burgers devoured</h3>
+      <br>
+      <ul>
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <div class="devourBurger">
+          <p>
+            {{this.burger_name}}</p>
+          <form action="/deleteOne/{{this.id}}" method="POST">
+            <button type="submit" class="btn" > DELETE! </button>
+          </form>
+          {{/if}}
+          {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
+
+</div>
